@@ -1,9 +1,9 @@
-export default defineEventHandler(async event => {
-  const { req } = event.node
+export default defineEventHandler(async (event) => {
+  const {req} = event.node
   const backendRes = await getBackendResponse(
-    "/me/trial_status",
+    '/me/trial_status',
     req.headers,
-    "GET"
+    'GET'
   )
   backendRes.organizations = []
   backendRes.trial_limits = {

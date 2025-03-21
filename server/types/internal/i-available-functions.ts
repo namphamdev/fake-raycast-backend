@@ -16,14 +16,14 @@ export interface IAvailableFunction {
   }
   handler: Function
   notifications: {
-    'calls'?: {
+    calls?: {
       text: string
       type: string | 'tool_used'
     }
   }
   prompts?: {
-    'role': string
-    'content': string
+    role: string
+    content: string
   }[]
   required?: string[]
   requiredEnv?: string[]

@@ -1,8 +1,8 @@
-import { config } from "~/config"
-import { type RaycastModelID, models } from "~/models"
-import { DefaultModels } from "~/types"
+import {config} from '~/config'
+import {type RaycastModelID, models} from '~/models'
+import {DefaultModels} from '~/types'
 
-const fallbackModle: RaycastModelID = "openai-gpt-3.5-turbo"
+const fallbackModle: RaycastModelID = 'openai-gpt-3.5-turbo'
 
 export default defineEventHandler(() => {
   let default_models: DefaultModels = {
@@ -14,7 +14,7 @@ export default defineEventHandler(() => {
   }
 
   if (config.defaultRaycastModel) {
-    if (typeof config.defaultRaycastModel === "string") {
+    if (typeof config.defaultRaycastModel === 'string') {
       default_models = {
         chat: config.defaultRaycastModel,
         quick_ai: config.defaultRaycastModel,

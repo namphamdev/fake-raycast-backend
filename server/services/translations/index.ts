@@ -1,8 +1,8 @@
-import type { TranslateFrom, TranslateTo } from "~/types"
-import { generateTranslationsPrompts } from "./prompts"
-import OpenAI from "openai"
-import type { AIGenerateContent } from "~/types/internal/ai-generate-content"
-import { config } from "~/config"
+import type {TranslateFrom, TranslateTo} from '~/types'
+import {generateTranslationsPrompts} from './prompts'
+import OpenAI from 'openai'
+import type {AIGenerateContent} from '~/types/internal/ai-generate-content'
+import {config} from '~/config'
 
 export async function OpenaiGenerateContent(
   prompt: {
@@ -33,7 +33,7 @@ export async function OpenaiGenerateContent(
       n: 1,
       model
     })
-    .catch(err => {
+    .catch((err) => {
       throw new Error(`[AI] OpenAI Chat Completions Failed: ${err}`)
     })
 
@@ -41,9 +41,9 @@ export async function OpenaiGenerateContent(
     throw new Error(`[AI] OpenAI Chat Completions Failed: ${result}`)
 
   const text = result.choices[0].message.content!
-  const split = text.split("\n")
+  const split = text.split('\n')
   const detectedSourceLanguage = split[0]
-  const translatedText = split.slice(1).join("\n")
+  const translatedText = split.slice(1).join('\n')
 
   return {
     content: translatedText,
@@ -56,7 +56,7 @@ export async function TranslateWithAI(
 ): Promise<TranslateTo> {
   const prompts = generateTranslationsPrompts(body.target, body.q)
   const model = config.translate.model
-  const { content, detectedSourceLanguage } = await OpenaiGenerateContent(
+  const {content, detectedSourceLanguage} = await OpenaiGenerateContent(
     prompts,
     model
   )

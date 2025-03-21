@@ -1,15 +1,15 @@
-import { TRANSLATE_DICT_REVERSE } from "./dict"
+import {TRANSLATE_DICT_REVERSE} from './dict'
 
 //
 export function generateTranslationsPrompts(targetLang: string, text: string) {
   return [
     {
       content:
-        "You are a translate engine, translate directly without explanation.",
-      role: "system"
+        'You are a translate engine, translate directly without explanation.',
+      role: 'system'
     },
     {
-      role: "user",
+      role: 'user',
       content: `Translate the following text to ${
         TRANSLATE_DICT_REVERSE[
           targetLang as keyof typeof TRANSLATE_DICT_REVERSE

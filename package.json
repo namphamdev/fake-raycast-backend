@@ -8,11 +8,12 @@
     "preview": "node .output/server/index.mjs"
   },
   "dependencies": {
-    "openai": "^4.37.1"
+    "openai": "^4.37.1",
+    "prettier": "^3.5.3"
   },
   "devDependencies": {
-    "@vercel/kv": "^1.0.1",
     "@upstash/redis": "^1.28.4",
+    "@vercel/kv": "^1.0.1",
     "nitropack": "^2.9.6"
   }
 }

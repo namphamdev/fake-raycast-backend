@@ -1,8 +1,8 @@
-import sync from "~/services/sync"
-export default defineEventHandler(async event => {
-  const { req } = event.node
+import sync from '~/services/sync'
+export default defineEventHandler(async (event) => {
+  const {req} = event.node
   switch (req.method) {
-    case "PUT":
+    case 'PUT':
       return await sync.put(event)
     default:
       return await sync.get(event)

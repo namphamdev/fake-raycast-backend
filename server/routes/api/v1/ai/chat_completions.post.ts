@@ -1,5 +1,5 @@
-import { OpenAIChatCompletion } from "~/services/completions"
-export default defineEventHandler(async event => {
+import {OpenAIChatCompletion} from '~/services/completions'
+export default defineEventHandler(async (event) => {
   try {
     return await OpenAIChatCompletion(event)
   } catch (err) {

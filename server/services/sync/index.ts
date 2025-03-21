@@ -1,4 +1,4 @@
-import { type H3Event, EventHandlerRequest } from "h3"
+import {type H3Event, EventHandlerRequest} from 'h3'
 
 interface SyncContent {
   deleted: string[]
@@ -27,10 +27,10 @@ async function get(event: H3Event<EventHandlerRequest>) {
   const content: SyncContent = await dataStorage.getItem(user)
   if (content === null) return failed
 
-  const requestAfter = getRequestURL(event).searchParams.get("after")
+  const requestAfter = getRequestURL(event).searchParams.get('after')
   if (requestAfter) {
     const after = new Date(requestAfter)
-    if (after.toString() !== "Invalid Date") {
+    if (after.toString() !== 'Invalid Date') {
       const updated = content.updated.filter((item: any) => {
         const updated_at = new Date(item.updated_at)
         return updated_at > after

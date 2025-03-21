@@ -1,4 +1,4 @@
-import { OpenAIModel, RaycastModelID } from "~/models"
+import {OpenAIModel, RaycastModelID} from '~/models'
 
 export interface DefaultModels {
   chat: RaycastModelID

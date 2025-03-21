@@ -54,7 +54,7 @@ export enum TRANSLATE_DICT {
   'is' = 'is_IS',
   'jw' = 'jw_ID',
   'ka' = 'ka_GE',
-  'kk' = 'kk_KZ',
+  'kk' = 'kk_KZ'
 }
 
 export enum TRANSLATE_DICT_REVERSE {
@@ -116,4 +116,5 @@ export enum TRANSLATE_DICT_REVERSE {
   'jw' = 'Jawa',
   'ka' = 'ქართული',
   'kk' = 'Қазақ',
+  'vi' = 'Tiếng Việt'
 }
